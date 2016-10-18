@@ -11,11 +11,35 @@ th
         color:orangered; font-size: 27px 
     }
 a
-{
-    font-style: italic; color:green; font-size: 25px
-}
+    {
+        font-style: italic; color:green; font-size: 25px
+    }
 td
+    {
+        color:blue; font-size: 22px        
+    }
+h1
+    {
+        color: orangered
+    } 
+#sample
+    {
+        color: cornflowerblue
+    }
+.sample2
+    {
+        color: darkcyan 
+    }
+ul
+    {
+        display:flex; 
+        list-style: none; 
+        flex-direction: row;
+    }
+@media screen and (max-width: 600px)
 {
-    color:blue; font-size: 22px
-        
+    ul
+        {
+            flex-direction: column;
+        }
 }
