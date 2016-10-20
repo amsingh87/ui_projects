@@ -1,0 +1,6 @@
+JAVASCRIPT
+
+accesssor =  get method
+mutators = set methhod
+== -> used to compare the value in javascript(eg x=2 and y = "2" is true because it only checks the value)
+=== -> used to compare the data variable in javascript(x=2 and y ="2" is false because it checks the data variable and x is int and y is a string)
