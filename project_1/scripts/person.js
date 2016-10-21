@@ -1,4 +1,18 @@
 'use strict';
+//same as $(document).ready(function(){});
+$(function () {
+    $("#dob").datepicker();
+    $("#tabs").tabs();
+    $("#submit").click(submit);
+    $("#display").click(display);
+    // $("#display").on("click", display);
+    $("#test").on("click", function () {
+        $("$submit").trigger("click");
+        $("$display").trigger("click");
+    });
+});
+
+
 
 function Person() {
     var firstName = " ";
@@ -88,38 +102,96 @@ var personArray = [];
 
 function submit() {
     var pObj = new Person();
-    var firstName = document.getElementById("firstName").value;
-    var lastName = document.getElementById("lastName").value;
-    var address = document.getElementById("address").value;
-    var dob = document.getElementById("dob").value;
+    var carsArray = [];
+    /* var gender = "";
+     var genderName = document.getElementsByName("gender");
+
+     for (var i = 0; i < genderName.length; i++) {
+         if (genderName[i].checked) {
+             gender = genderName[i].value;
+         }
+     }*/
+    //jquery variable declaration
+    var firstName = $("#firstName").val();
+    var lastName = $("#lastName").val();
+    var address = $("#address").val();
+    var dob = $("#dob").val();
+    var country = $("#country").val();
+    var gender = $("#gender:checked").val();
+    var car = document.getElementsByName("car");
+    for (var i = 0; i < car.length; i++) {
+        if (car[i].checked) {
+            carsArray.push(car[i].value);
+        }
+    }
+
+    //console.log(carsArray);
+
+    //java script variable declaration
+    /*  var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var address = document.getElementById("address").value;
+      var dob = document.getElementById("dob").value;
+      var country = document.getElementById("country").value;*/
+    /*if (document.getElementByMame("genderMale").checked = true) {
+        gender = document.getElementById("genderMale").value;
+
+    } else if (document.getElementById("genderFemale").checked = true) {
+        gender = document.getElementById("genderFemale").value
+
+    }*/
+
     pObj.setfirstName(firstName);
     pObj.setlastName(lastName);
     pObj.setaddress(address);
     pObj.setdob(dob);
+    pObj.setcountry(country);
+    pObj.setgender(gender);
+    pObj.setcars(carsArray);
     //pObj.checkData();
     personArray.push(pObj);
     //checkArray(personArray);
+    display();
 }
 
 function generateTable(sample) {
     var template = "";
     var i = 1;
+    template += "<div class='accordion'>";
     sample.forEach(function (x) {
-        template += "ITEM" + i + "<br>";
-        template += "FIRST NAME " + x.getfirstName() + "<br>";
-        template += "LAST NAME " + x.getlastName() + "<br>";
+        // template += "PERSON " + i + "<br>";
+
+        template += "<h3>" + x.getlastName() + "," + x.getfirstName() + "</h3>";
+        template += "<div>";
+        template += "FIRST NAME: " + x.getfirstName() + "<br>";
+        template += "LAST NAME: " + x.getlastName() + "<br>";
+        template += "ADDRESS: " + x.getaddress() + "<br>";
+        template += "DATE OF BIRTH: " + x.getdob() + "<br>";
+        template += "COUNTRY: " + x.getcountry() + "<br>";
+        template += "GENDER: " + x.getgender() + "<br>";
+        template += "CARS: " + x.getcars() + "<br>";
         template += "<hr>";
         i++;
     });
+    template += "</div>";
     return template;
 }
 
 function display() {
     var result = generateTable(personArray);
-    document.getElementById("results").innerHTML = result;
+    //  result = "Hello World";
+    // document.getElementById("results").innerHTML = result;//javascript syntax to display resulst
+    $("#resultTab").html(result); //jquery syntax to display result
+    $(".accordion").accordion({
+        collapsible: true,
+        active: false,
+        heightStyle: "content"
+    });
 }
 
-var carsArray = ["Audi", "Lexus"];
+
+//manually providing the value in the object
+/*var carsArray = ["Audi", "Lexus"];
 var pObj = new Person();
 pObj.setfirstName('John');
 pObj.setlastName('Drew');
@@ -153,4 +225,4 @@ personArray.forEach(function (x) {
     })
     //printing the list by its index number
 personArray[0].checkData();
-personArray[1].checkData();
+personArray[1].checkData();*/

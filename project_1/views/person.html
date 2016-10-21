@@ -5,6 +5,7 @@
 <head>
     <title>Contact Information</title>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/node_modules/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.css">
 </head>
 
 <body>
@@ -48,7 +49,14 @@
                     Country
                 </div>
                 <div class="col-mdm-4">
-                    <input type='text' name="country" id="country" placeholder="Enter Country">
+                    <select name="country" id="country">
+                        <option value="">Select a Country</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="USA">United States</option>
+                        <option value="london">London</option>
+                        <option value="Australia">Australia</option>
+
+                    </select>
                 </div>
             </div>
             <div class="row">
@@ -56,17 +64,29 @@
                     Gender
                 </div>
                 <div class="col-mdm-4">
-                    <input type="radio" name="gender" id="genderMale">Male
-                    <input type="radio" name="gender" id="genderFemale">Female
+                    <input type="radio" name="gender" id="genderMale" value="male">Male
+                    <input type="radio" name="gender" id="genderFemale" value="female">Female
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    Cars
+                </div>
+                <div class="col-mdm-4">
+                    <input type="checkbox" name="car" id="car" value="car">
                 </div>
             </div>
         </form>
     </div>
 
-    <button type="submit" class="btn btn-primary" onclick="submit()">Submit</button>
-    <button type="display" class="btn btn-success" onclick="display()">Display</button>
+    <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+    <button type="display" id="display" class="btn btn-success">Display</button>
+    <button type="button" id="test" class="btn btn-danger">Test</button>
     <div id="results">this is the part where the results gets displayed</div>
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/node_modules/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script type="text/javascript" src="/scripts/person.js"></script>
+
 </body>
 
 </html>

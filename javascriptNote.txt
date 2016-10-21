@@ -1,5 +1,39 @@
 JAVASCRIPT
 
+
+DOM:Document Object Module
+
+For installing bootstrap
+------------------------
+npm- node package manager
+bower - package manager(another)
+
+1. Downlod node.js
+2. go to the file folder
+3. go to cmd and type npm init(everything default)- it creates the package.json inside the folder project_1
+4. go to cmd and type npm install --save bootstrap@3 - it creates a node module under which there is a folder called bootstrap
+(this command save is going to add dependencies)
+5. go to cmd and type npm install jquery
+6. go to cmd and type npm install --save-dev jquery(this command is going to add jquery dependencies for development on your computer) 
+
+
+Assingment for UIs
+calculation.js
+private:
+	num 1
+	num 2
+public:
+	add
+	multiply	
+	divide
+	substract
+
+
+document.getElementbyid
+return num1 + num2
+---------------------------------------------------------------------------------------------------------------------
+var is a data variable in java script
+
 accesssor =  get method
 mutators = set methhod
 == -> used to compare the value in javascript(eg x=2 and y = "2" is true because it only checks the value)

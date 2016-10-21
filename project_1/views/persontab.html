@@ -1,0 +1,99 @@
+<!doctype HTML>
+
+<html>
+
+<head>
+    <title>Contact Information</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/node_modules/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.css">
+</head>
+
+<body>
+    <div id="tabs">
+        <ul>
+            <li><a href="#formTab">Form</a></li>
+            <li><a href="#resultTab">Result</a></li>
+        </ul>
+        <div id="formTab">
+            <form name="contactInfo">
+                <div class="row">
+                    <div class="col-md-2">
+                        First Name
+                    </div>
+                    <div class="col-mdm-4">
+                        <input type="text" name="firstName" id="firstName" placeholder="Enter First Name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Last Name
+                    </div>
+                    <div class="col-mdm-4">
+                        <input type="text" name="lastName" id="lastName" placeholder="Enter Last Name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Address
+                    </div>
+                    <div class="col-mdm-4">
+                        <input type='text' name="address" id="address" placeholder="Enter Address">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Date of Birth
+                    </div>
+                    <div class="col-mdm-4">
+                        <input type='text' name="dob" id="dob" placeholder="Enter Date of Birth">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2">
+                        Country
+                    </div>
+                    <div class="col-mdm-4">
+                        <select name="country" id="country">
+                            <option value="">Select a Country</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="USA">United States</option>
+                            <option value="london">London</option>
+                            <option value="Australia">Australia</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Gender
+                    </div>
+                    <div class="col-mdm-4">
+                        <input type="radio" name="gender" id="gender" value="male">Male
+                        <input type="radio" name="gender" id="gender" value="female">Female
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Cars
+                    </div>
+                    <div class="col-mdm-4">
+                        <input type="checkbox" name="car" id="car" value="Audi">Audi
+                        <input type="checkbox" name="car" id="car" value="Lexus">Lexus
+                        <input type="checkbox" name="car" id="car" value="BMW">BMW
+                    </div>
+                </div>
+            </form>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div id="resultTab">
+
+        </div>
+    </div>
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/node_modules/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script type="text/javascript" src="/scripts/person.js"></script>
+
+</body>
+
+</html>
